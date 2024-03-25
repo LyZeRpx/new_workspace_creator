@@ -1,0 +1,12 @@
+*.o
+*~
+*#
+.vscode
+mysh
+vgcore*
+a.out
+compile_flags.txt
+coding-style-reports.log
+tests
+*.a
+*.sh
