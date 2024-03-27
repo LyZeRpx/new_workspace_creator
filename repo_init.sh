@@ -1,6 +1,6 @@
 #!/bin/bash
 #First step : initialize the repo
-export REPO=${HOME}/New_workspace_creator
+export REPO=${HOME}/new_workspace_creator
 mkdir -p src
 mkdir -p headers
 
@@ -26,7 +26,7 @@ lib_flag=" -l"
 #auto lib lmport
 import_lib() {
     echo "Which one ? (enter libray name without lib prefix)"
-    echo List of Avaliable Libraries : ; ls --color=auto ~/New_workspace_creator/custom_libs
+    echo List of Avaliable Libraries : ; ls --color=auto ${REPO}/custom_libs
     read lib_name
     cp -r ${REPO}/custom_libs/lib$lib_name ./libraries/lib$lib_name 2> /dev/null
     if [ "$?" == 1 ]; then

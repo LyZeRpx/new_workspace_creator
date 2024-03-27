@@ -1,7 +1,7 @@
-export REPO=${HOME}/New_workspace_creator
+export REPO=${HOME}/new_workspace_creator
 DIR=./headers
 if [ -f "$DIR" ]; then
-    echo "$FILE exists."
+    1
 else
     echo "headers directory not found, please either copy/create your own, or use the '"'new_workspace command'"'"
     exit
