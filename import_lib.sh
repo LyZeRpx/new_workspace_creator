@@ -2,7 +2,7 @@
 #First step : initialize the repo
 FILE=./Makefile
 if [ -f "$FILE" ]; then
-    echo "$FILE exists."
+    1
 else
     echo "Makefile not found, please either copy/create your own Makefile or use the '"'new_workspace command'"'"
     exit
