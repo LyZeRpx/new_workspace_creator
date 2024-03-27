@@ -2,7 +2,6 @@
 *~
 *#
 .vscode
-mysh
 vgcore*
 a.out
 compile_flags.txt

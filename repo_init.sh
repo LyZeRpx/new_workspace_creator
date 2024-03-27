@@ -17,6 +17,7 @@ mkdir -p main
 cp ${REPO}/main/main.c main/main.c
 mkdir -p libraries
 cp ${REPO}/.gitignore .
+sed -i "1i${binary_name}" .gitignore
 status=0
 YES="Y"
 NO="n"
