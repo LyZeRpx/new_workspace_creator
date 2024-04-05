@@ -7,7 +7,7 @@ Welcome to the Workspace Creator
 first clone this repository **into your HOME directory**
 
 ```bash
-git clone https://github.com/LyZeRpx/New_workspace_creator.git
+git clone https://github.com/LyZeRpx/new_workspace_creator.git
 ```
 ### Adding commands
 
@@ -18,9 +18,9 @@ code ~/.bashrc
 ```
 then add the following aliases :
 ```bash
-alias import_lib="${HOME}/New_workspace_creator/import_lib.sh"
-alias new_workspace="${HOME}/New_workspace_creator/repo_init.sh"
-alias new_header="${HOME}/New_workspace_creator/header_maker.sh"
+alias import_lib="${HOME}/new_workspace_creator/import_lib.sh"
+alias new_workspace="${HOME}/new_workspace_creator/repo_init.sh"
+alias new_header="${HOME}/new_workspace_creator/header_maker.sh"
 ```
 
 ## Usage
@@ -35,4 +35,4 @@ If you want (or forgot) to add one of your libraries with the previous command, 
 ```bash
 new_header
 ```
-Self explanatory...
+Executes the header_maker.sh script and creates a proper header with the name of your choice.
