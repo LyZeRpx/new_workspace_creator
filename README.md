@@ -4,19 +4,14 @@ Welcome to the Workspace Creator
 
 ## Installation
 
-first clone this repository **into your HOME directory**
+First, clone this repository **into your HOME directory**
 
 ```bash
 git clone https://github.com/LyZeRpx/new_workspace_creator.git
 ```
 ### Adding commands
 
-edit your bash/zshrc file
-
-```bash
-code ~/.bashrc
-```
-then run the installation script:
+Run the installation script:
 ```bash
 chmod +x INSTALL.sh
 ./INSTALL.sh
@@ -35,3 +30,5 @@ If you want (or forgot) to add one of your libraries with the previous command, 
 new_header
 ```
 Executes the header_maker.sh script and creates a proper header with the name of your choice.
+
+You need to copy all your libraries into the "custom_libs" folder, be sure to sync them between their original repos and this directory when recompiling those.
