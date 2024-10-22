@@ -16,11 +16,10 @@ edit your bash/zshrc file
 ```bash
 code ~/.bashrc
 ```
-then add the following aliases :
+then run the installation script:
 ```bash
-alias import_lib="${HOME}/new_workspace_creator/import_lib.sh"
-alias new_workspace="${HOME}/new_workspace_creator/repo_init.sh"
-alias new_header="${HOME}/new_workspace_creator/header_maker.sh"
+chmod +x INSTALL.sh
+./INSTALL.sh
 ```
 
 ## Usage
