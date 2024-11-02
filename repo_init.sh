@@ -2,7 +2,7 @@
 #First step : initialize the repo
 export REPO=${HOME}/new_workspace_creator
 mkdir -p src
-mkdir -p headers
+mkdir -p include
 
 cp ${REPO}/Makefile .
 echo Please enter project_name :
@@ -10,26 +10,26 @@ read project_name
 echo "Please enter the project binary name (Located on your beautiful PDF)" :
 read binary_name
 sed -i "16iNAME = $binary_name" Makefile
-cp ${REPO}/headers/project.h headers/$project_name.h
-sed -i "8i#ifndef ${project_name^^}_H" headers/$project_name.h
-sed -i "9i \ \ \ \ #define ${project_name^^}_H" headers/$project_name.h
+cp ${REPO}/include/project.h include/$project_name.h
+sed -i "8i#ifndef ${project_name^^}_H" include/$project_name.h
+sed -i "9i \ \ \ \ #define ${project_name^^}_H" include/$project_name.h
 mkdir -p main
 cp ${REPO}/main/main.c main/main.c
-mkdir -p libraries
+mkdir -p lib
 cp ${REPO}/.gitignore .
 sed -i "1i${binary_name}" .gitignore
 status=0
 YES="Y"
 NO="n"
-LDFLAGS="LDFLAGS = -L./libraries"
+LDFLAGS="LDFLAGS = -L./lib"
 lib_flag=" -l"
 
 #auto lib lmport
 import_lib() {
     echo "Which one ? (enter libray name without lib prefix)"
-    echo List of Avaliable Libraries : ; ls --color=auto ${REPO}/custom_libs
+    echo List of Avaliable lib : ; ls --color=auto ${REPO}/custom_libs
     read lib_name
-    cp -r ${REPO}/custom_libs/lib$lib_name ./libraries/lib$lib_name 2> /dev/null
+    cp -r ${REPO}/custom_libs/lib$lib_name ./lib/lib$lib_name 2> /dev/null
     if [ "$?" == 1 ]; then
         echo "Library does not exist (Error:1)"
         echo "Does your library exists but has an unformatted name ? (Y or n)"
@@ -37,7 +37,7 @@ import_lib() {
         if [ "$input" == "$YES" ]; then
             echo "Enter non-formatted library name"
             read lib_name
-            cp -r ${REPO}/custom_libs/$lib_name ./libraries/$lib_name 2> /dev/null
+            cp -r ${REPO}/custom_libs/$lib_name ./lib/$lib_name 2> /dev/null
             if [ "$?" == 1 ]; then
                 echo "Library does not exist (Error:2)"
             else
