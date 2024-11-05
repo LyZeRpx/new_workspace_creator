@@ -10,7 +10,7 @@ read project_name
 echo "Please enter the project binary name (Located on your beautiful PDF)" :
 read binary_name
 sed -i "16iNAME = $binary_name" Makefile
-cp ${REPO}/include/project.h include/$project_name.h
+cp ${REPO}/headers/project.h include/$project_name.h
 sed -i "8i#ifndef ${project_name^^}_H" include/$project_name.h
 sed -i "9i \ \ \ \ #define ${project_name^^}_H" include/$project_name.h
 mkdir -p main
