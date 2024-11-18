@@ -1,9 +1,9 @@
 export REPO=${HOME}/new_workspace_creator
-DIR=./headers
+DIR=./include
 if [ -f "$DIR" ]; then
     1
 else
-    echo "headers directory not found, please either copy/create your own, or use the '"'new_workspace command'"'"
+    echo "include directory not found, please either copy/create your own, or use the '"'new_workspace command'"'"
     exit
 fi
 echo "Enter header name ?"
