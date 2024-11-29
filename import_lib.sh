@@ -9,7 +9,6 @@ else
 fi
 
 export REPO=${HOME}/new_workspace_creator
-status=0
 YES="Y"
 NO="n"
 LDFLAGS="LDFLAGS = -L./libraries"

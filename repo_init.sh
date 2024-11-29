@@ -13,8 +13,7 @@ sed -i "16iNAME = $binary_name" Makefile
 cp ${REPO}/headers/project.h include/$project_name.h
 sed -i "8i#ifndef ${project_name^^}_H" include/$project_name.h
 sed -i "9i \ \ \ \ #define ${project_name^^}_H" include/$project_name.h
-mkdir -p main
-cp ${REPO}/main/main.c main/main.c
+cp ${REPO}/main/main.c src/main.c
 mkdir -p lib
 cp ${REPO}/.gitignore .
 sed -i "1i${binary_name}" .gitignore
