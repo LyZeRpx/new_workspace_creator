@@ -1,6 +1,7 @@
 #!/bin/bash
 #First step : initialize the repo
 export REPO=${HOME}/new_workspace_creator
+YEAR=$(date +%Y)
 mkdir -p src
 mkdir -p include
 
@@ -11,6 +12,7 @@ echo "Please enter the project binary name (Located on your beautiful PDF)" :
 read binary_name
 sed -i "16iNAME = $binary_name" Makefile
 cp ${REPO}/headers/project.h include/$project_name.h
+sed -i "2i** EPITECH PROJECT, ${YEAR}" include/$project_name.h
 sed -i "8i#ifndef ${project_name^^}_H" include/$project_name.h
 sed -i "9i \ \ \ \ #define ${project_name^^}_H" include/$project_name.h
 cp ${REPO}/main/main.c src/main.c

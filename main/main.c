@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2024
-** minishell
+** my_project
 ** File description:
 ** main.c
 */
