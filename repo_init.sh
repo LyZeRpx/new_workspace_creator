@@ -10,7 +10,7 @@ echo Please enter project_name :
 read project_name
 echo "Please enter the project binary name (Located on your beautiful PDF)" :
 read binary_name
-sed -i "16iNAME = $binary_name" Makefile
+sed -i "12iNAME = $binary_name" Makefile
 cp ${REPO}/headers/project.h include/$project_name.h
 sed -i "2i** EPITECH PROJECT, ${YEAR}" include/$project_name.h
 sed -i "8i#ifndef ${project_name^^}_H" include/$project_name.h
@@ -22,7 +22,7 @@ sed -i "1i${binary_name}" .gitignore
 status=0
 YES="Y"
 NO="n"
-LDFLAGS="LDFLAGS = -L./lib"
+LDFLAGS="LDFLAGS = -L/lib"
 lib_flag=" -l"
 
 #auto lib lmport

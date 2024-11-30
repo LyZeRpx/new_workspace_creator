@@ -7,34 +7,56 @@
 
 CC ?= gcc
 
-AR ?= ar
-
-RM = rm
-
-SRC 	=	main/main.c 							\
+SRC 	=	src/main.c 					\
 
 
-VPATH = ./headers
 
-CPPFLAGS = -iquote $(VPATH) -Wall -Wextra
+VPATH = ./include
 
+CFLAGS += -Wall -Wextra -pedantic
+
+LIBMY = my
+
+LIBGRAPHIC = libgraphic
+
+LIBGRAPHIC_PATH = lib/${LIBGRAPHIC}
+
+LIBMY_PATH = lib/${LIBMY}
+
+CSFMLIBS = -lcsfml-system -lcsfml-window -lcsfml-graphics -lcsfml-audio -lm
+
+LDLIBS = -lmy -lgraphic ${CSFMLIBS}
+
+LDFLAGS = -Llib ${LDLIBS}
+
+CPPFLAGS = -iquote $(VPATH)
 
 OBJ	= $(SRC:.c=.o)
 
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -o $(NAME) $(OBJ) $(LDFLAGS)
+	$(MAKE) -C ${LIBMY_PATH}
+	$(MAKE) -C ${LIBGRAPHIC_PATH}
+	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(LDLIBS)
 
 clean:
-	$(RM) -f $(OBJ)
+	$(MAKE) clean -C ${LIBMY_PATH}
+	$(MAKE) clean -C ${LIBGRAPHIC_PATH}
+	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) -f $(NAME)
+	$(MAKE) fclean -C ${LIBMY_PATH}
+	$(MAKE) fclean -C ${LIBGRAPHIC_PATH}
+	$(RM) $(NAME)
 
 re: fclean all
+	$(MAKE) re -C ${LIBMY_PATH}
 
 debug: CFLAGS += -g3
+debug: LDFLAGS += -fsanitize=address
 debug: re
+	$(MAKE) debug -C ${LIBMY_PATH}
+	$(MAKE) debug -C ${LIBGRAPHIC_PATH}
 
-.PHONY: all clean fclean re debug \
+.PHONY: all clean fclean re debug
